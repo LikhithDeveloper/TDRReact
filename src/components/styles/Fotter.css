@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
+
+.footer {
+  width: 100%;
+  height: 150px;
+  background-color: #17191b;
+  /* padding: 40px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-main {
+  width: 95%;
+  height: 80%;
+  /* background-color: red; */
+}
+
+.footer-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.429);
+  margin-left: 5%;
+}
+
+.footer-name {
+  padding-left: 0px;
+  color: white;
+}
+
+/* @media screen and(max-width:500px) {
+  .footer-name {
+    font-size: 10px;
+  }
+} */
+
+.cpy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 13px;
+}

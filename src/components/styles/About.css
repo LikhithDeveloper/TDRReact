@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
+
+.about {
+  margin-top: 110px;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  padding: 20px;
+  animation-name: fade;
+  animation-duration: 2s;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+.inner-about {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.inner-1 {
+  width: 100%;
+  height: 30%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-2 {
+  width: 100%;
+  height: 70%;
+  /* background-color: rgb(106, 106, 126); */
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.profile {
+  width: 260px;
+  border-radius: 100%;
+}
+
+.about-data {
+  padding: 20px 25px;
+  display: flex;
+  /* justify-content: center; */
+  text-align: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  flex-direction: row;
+}
+
+.about-data button {
+  width: 150px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid #2563eb;
+  background-color: rgb(243, 239, 239);
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-data button:hover {
+  border: 0px solid #2563eb;
+  background-color: #2563eb;
+  color: white;
+}
+
+.contact-icons {
+  width: 100%;
+  height: 70px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.icons {
+  margin: 0px 10px;
+}
+
+@keyframes fade {
+  0% {
+    top: 20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  position: relative;
+  z-index: 3;
+  /* top: 10px; */
+
+  animation-name: arrow;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.name {
+  margin-bottom: 10px;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 783px) {
+  .name {
+    text-align: center;
+    font-size: 35px;
+  }
+}
