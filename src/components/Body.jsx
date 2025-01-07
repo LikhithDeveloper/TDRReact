@@ -87,27 +87,10 @@ const Body = ({
           </button>
           {/* <h2>PORTFOLIO</h2> */}
           <div className="portfolio">
-            <h3>PORTFOLIO</h3>
+            <h4>PORTFOLIO</h4>
           </div>
         </div>
-        {/* <div className="background">
-          <div className="background-1"></div>
-          <div className="background-2"></div>
-          <div className="background-3"></div>
-          <div className="background-4"></div>
-          <div className="background-5"></div>
-          <div className="background-6"></div>
-          <div className="background-7">
-            <div></div>
-          </div>
-        </div>
-        <About />
-        <Me />
-        <Project />
-        <Skills />
-        <Contact />
-        <Fotter /> */}
-        {/* <MainComponents></MainComponents> */}
+
         {children}
       </div>
     </div>

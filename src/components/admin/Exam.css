@@ -1,0 +1,24 @@
+.exam-div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 10px; /* Add spacing between the grid items */
+  justify-content: center; /* Center the grid within the container */
+}
+
+@media screen and (max-width: 850px) {
+  .exam-div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 10px; /* Add spacing between the grid items */
+    justify-content: center; /* Center the grid within the container */
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .exam-div {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    gap: 10px; /* Add spacing between the grid items */
+    justify-content: center; /* Center the grid within the container */
+  }
+}

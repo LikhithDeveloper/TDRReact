@@ -251,14 +251,20 @@
 }
 
 .portfolio {
-  width: 100px;
+  width: 130px;
   height: 100%;
   position: absolute;
-  left: 70px;
+  left: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  /* background-color: blue; */
+}
+
+.portfolio h4 {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1111px) {
