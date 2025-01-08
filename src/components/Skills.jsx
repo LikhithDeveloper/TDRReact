@@ -10,7 +10,7 @@ import django from "../assets/png-clipart-django-web-development-web-framework-p
 import node from "../assets/png-transparent-js-logo-node-logos-and-brands-icon-thumbnail-removebg-preview.png";
 
 const Skills = () => {
-  const images = [html, cc, js, reactLogo, node, django, py, cpp];
+  const images = [html, cc, js, reactLogo, django, py, cpp];
 
   return (
     <div className="clients" id="skills">

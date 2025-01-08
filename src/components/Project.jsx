@@ -104,8 +104,10 @@ const Project = () => {
             </div>
             <div className="grid-text">
               <div className="pro-name">
-                <h3>E-commerce Platform</h3>
-                <p>A E-commerce Platform API's using Djago REST framework</p>
+                <h3 style={{ fontSize: "18px" }}>E-commerce Platform</h3>
+                <p style={{ fontSize: "13px" }}>
+                  A E-commerce Platform API's using Djago REST framework
+                </p>
               </div>
               <div className="links">
                 <a
@@ -161,8 +163,10 @@ const Project = () => {
             </div>
             <div className="grid-text">
               <div className="pro-name">
-                <h3>Trade Platform</h3>
-                <p>A Trade Platform which connects Producer and Consumer</p>
+                <h3 style={{ fontSize: "18px" }}>Trade Platform</h3>
+                <p style={{ fontSize: "13px" }}>
+                  A Trade Platform which connects Producer and Consumer
+                </p>
               </div>
               <div className="links">
                 <a href="#" style={{ textDecoration: "none", color: "black" }}>
@@ -215,8 +219,12 @@ const Project = () => {
             </div>
             <div className="grid-text">
               <div className="pro-name">
-                <h3>Website for a freelncing company</h3>
-                <p>A Static Website for freelancing company DEVELOPERS.GEN</p>
+                <h3 style={{ fontSize: "18px" }}>
+                  Website for a freelncing company
+                </h3>
+                <p style={{ fontSize: "13px" }}>
+                  A Static Website for freelancing company DEVELOPERS.GEN
+                </p>
               </div>
               <div className="links">
                 <a
@@ -272,8 +280,8 @@ const Project = () => {
             </div>
             <div className="grid-text">
               <div className="pro-name">
-                <h3>Book Your Show</h3>
-                <p>
+                <h3 style={{ fontSize: "18px" }}>Book Your Show</h3>
+                <p style={{ fontSize: "13px" }}>
                   Book your show appication has some similar fuctionalities of
                   BookMyShow made with Django
                 </p>

@@ -1,8 +1,9 @@
 .exam-div {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 10px; /* Add spacing between the grid items */
-  justify-content: center; /* Center the grid within the container */
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-template-rows: 400px;
+  gap: 10px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 850px) {
@@ -18,7 +19,7 @@
   .exam-div {
     display: grid;
     grid-template-columns: repeat(1, minmax(300px, 1fr));
-    gap: 10px; /* Add spacing between the grid items */
+    gap: 10px;
     justify-content: center; /* Center the grid within the container */
   }
 }

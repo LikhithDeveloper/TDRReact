@@ -40,8 +40,10 @@ const Me = () => {
                     <polyline points="8 6 2 12 8 18"></polyline>
                   </svg>
                 </span>
-                <h4 style={{ color: "black" }}>Frontend</h4>
-                <p style={{ color: "black" }}>React, HTML, CSS, JS</p>
+                <h4 style={{ color: "black", fontSize: "17px" }}>Frontend</h4>
+                <p style={{ color: "black", fontSize: "14px" }}>
+                  React, HTML, CSS, JS
+                </p>
               </div>
               <div className="backend">
                 <span style={{ color: "white" }}>
@@ -62,8 +64,10 @@ const Me = () => {
                     <path d="M2 12h20"></path>
                   </svg>
                 </span>
-                <h4 style={{ color: "black" }}>Backend</h4>
-                <p style={{ color: "black" }}>Django, Django REST, Node</p>
+                <h4 style={{ color: "black", fontSize: "17px" }}>Backend</h4>
+                <p style={{ color: "black", fontSize: "14px" }}>
+                  Django, Django REST
+                </p>
               </div>
             </div>
           </div>
