@@ -1,13 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./styles/Navbar.css";
 import "./styles/ResNav.css";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router";
+import { FirebaseLink } from "./store/firebase";
 
 const Navbar = ({ navActive, setNavActive, bodyActive, setBodyActive }) => {
   const ref1 = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
+  const { user } = useContext(FirebaseLink);
+
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -64,6 +68,11 @@ const Navbar = ({ navActive, setNavActive, bodyActive, setBodyActive }) => {
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+            {user ? (
+              <Link to="/admin/dashboard">Admin</Link>
+            ) : (
+              <Link to="/admin/login">Admin</Link>
+            )}
           </div>
         </div>
 

@@ -1,6 +1,17 @@
 import image1 from "../../assets/cover-pic---b2b-portals---eng.png";
 import "./styles/Exam.css";
+import { useNavigate } from "react-router";
+import { useEffect, useContext } from "react";
+import { FirebaseLink } from "../store/firebase";
 const Exams = () => {
+  const { user } = useContext(FirebaseLink);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      // If there's no user, redirect to the login page
+      navigate("/admin/login/");
+    }
+  }, [user, navigate]);
   return (
     <div
       className="exam-div"
@@ -21,7 +32,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
@@ -34,7 +45,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
@@ -47,7 +58,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
@@ -61,7 +72,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
@@ -74,7 +85,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
@@ -87,7 +98,7 @@ const Exams = () => {
             bulk of the card's content.
           </p>
           <a href="#" className="btn btn-primary w-100">
-            Attempt
+            Set Papper
           </a>
         </div>
       </div>
