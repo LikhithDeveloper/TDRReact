@@ -138,9 +138,13 @@ const Exams = () => {
               <p className="card-text">
                 {exam.description || "No description provided."}
               </p>
-              <a href="#" className="btn btn-primary w-100">
+              <button
+                onClick={() => navigate("/admin/setpaper/")}
+                href="#"
+                className="btn btn-primary w-100"
+              >
                 SET PAPER
-              </a>
+              </button>
               <button
                 href="#"
                 onClick={() => DeleteExam(exam.id)}

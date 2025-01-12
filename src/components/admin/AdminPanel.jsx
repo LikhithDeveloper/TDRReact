@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard";
 import Exams from "./Exams";
 import Students from "./Students";
 import AdminLogin from "./AdminLogin";
+import SetPaper from "./SetPaper";
 
 const AdminPanel = () => {
   return (
@@ -14,6 +15,7 @@ const AdminPanel = () => {
         <Route path="dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route path="exams" element={<Exams></Exams>}></Route>
         <Route path="students" element={<Students></Students>}></Route>
+        <Route path="setpaper" element={<SetPaper></SetPaper>}></Route>
       </Routes>
     </div>
   );
