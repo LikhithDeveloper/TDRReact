@@ -4,13 +4,13 @@ import { FirebaseLink } from "../store/firebase";
 
 const Students = () => {
   const navigate = useNavigate();
-  const { user } = useContext(FirebaseLink);
+  const { user, loading } = useContext(FirebaseLink);
   useEffect(() => {
-    if (!user) {
+    if (!loading && !user) {
       // If there's no user, redirect to the login page
       navigate("/admin/login/");
     }
-  }, [user, navigate]);
+  }, [user, navigate, loading]);
   return <h1>Welcome to students</h1>;
 };
 

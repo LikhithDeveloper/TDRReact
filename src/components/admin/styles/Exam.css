@@ -1,9 +1,17 @@
 .exam-div {
   display: grid;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
-  grid-template-rows: 400px;
+  grid-template-rows: 100%;
   gap: 10px;
   justify-content: center;
+}
+
+.spin {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 850px) {

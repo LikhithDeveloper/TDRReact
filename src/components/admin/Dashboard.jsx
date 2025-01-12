@@ -3,14 +3,15 @@ import { FirebaseLink } from "../store/firebase";
 import { useNavigate } from "react-router";
 
 const Dashboard = () => {
-  const { user } = useContext(FirebaseLink);
+  const { user, loading } = useContext(FirebaseLink);
   const navigate = useNavigate();
   useEffect(() => {
-    if (!user) {
+    console.log(user);
+    if (!loading && !user) {
       // If there's no user, redirect to the login page
       navigate("/admin/login/");
     }
-  }, [user, navigate]);
+  }, [user, navigate, loading]);
 
   return <h2>Hi Dashboard</h2>;
 };

@@ -15,6 +15,13 @@ import {
 } from "firebase/auth";
 
 import { useNavigate } from "react-router";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQ4PlvwDNj18eZBdFduxe_ZvPGQyUus34",
@@ -26,23 +33,55 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 // context decleration
 export const FirebaseLink = createContext();
 
 export const FirebaseStore = ({ children }) => {
   const [user, setUser] = useState(null);
-
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const [ex, setEx] = useState(1);
+
   const auth = getAuth();
 
   useEffect(() => {
+    const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false); // Update loading state once user state is determined
     });
-    return unsubscribe;
-  }, [auth]);
 
+    return () => unsubscribe();
+  }, []);
+
+  // Exams Creation
+  const AddExams = async (title, description) => {
+    try {
+      const doc = await addDoc(collection(db, "Exams"), {
+        title: title,
+        description: description,
+      });
+      setEx(ex + 1);
+      alert("Exam Created successfully");
+    } catch (e) {
+      alert("Error: ", e);
+    }
+  };
+
+  // Exam Deletion
+  const DeleteExamList = async (id) => {
+    try {
+      await deleteDoc(doc(db, "Exams", id));
+      setEx(ex - 1);
+      alert("Exam deleted successfully");
+    } catch (e) {
+      alert("Error: ", e);
+    }
+  };
+
+  // SIGNUP
   const SignUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -54,6 +93,7 @@ export const FirebaseStore = ({ children }) => {
       });
   };
 
+  //SIGNIN
   const SignIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -66,6 +106,7 @@ export const FirebaseStore = ({ children }) => {
       });
   };
 
+  //LOGOUT
   const Logout = () => {
     signOut(auth)
       .then(() => {
@@ -77,7 +118,20 @@ export const FirebaseStore = ({ children }) => {
   };
 
   return (
-    <FirebaseLink.Provider value={{ user, SignUp, SignIn, Logout }}>
+    <FirebaseLink.Provider
+      value={{
+        user,
+        SignUp,
+        SignIn,
+        Logout,
+        loading,
+        AddExams,
+        db,
+        ex,
+        setEx,
+        DeleteExamList,
+      }}
+    >
       {children}
     </FirebaseLink.Provider>
   );
