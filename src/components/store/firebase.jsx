@@ -21,6 +21,8 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
+  getDocs,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -67,6 +69,51 @@ export const FirebaseStore = ({ children }) => {
       alert("Exam Created successfully");
     } catch (e) {
       alert("Error: ", e);
+    }
+  };
+
+  // Paper data
+  const AddQuestion = async (
+    id,
+    question,
+    base64Image,
+    opt1,
+    opt2,
+    opt3,
+    opt4,
+    answer
+  ) => {
+    try {
+      const query = collection(db, "Exams", id, "Questions");
+      await addDoc(query, {
+        question: question,
+        image: base64Image,
+        opt1: opt1,
+        opt2: opt2,
+        opt3: opt3,
+        opt4: opt4,
+        answer: answer,
+      });
+      alert("Question is added");
+    } catch (error) {
+      alert("Can't able to add the question");
+    }
+  };
+
+  // Get Papers
+
+  const GetPaper = async (id) => {
+    try {
+      const query = collection(db, "Exams", id, "Questions");
+      const questionData = await getDocs(query);
+      const ques = [];
+      questionData.forEach((element) => {
+        ques.push({ id: element.id, ...element.data() });
+      });
+
+      return ques;
+    } catch (error) {
+      alert("Getting Server Error");
     }
   };
 
@@ -130,6 +177,8 @@ export const FirebaseStore = ({ children }) => {
         ex,
         setEx,
         DeleteExamList,
+        AddQuestion,
+        GetPaper,
       }}
     >
       {children}

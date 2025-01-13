@@ -139,7 +139,7 @@ const Exams = () => {
                 {exam.description || "No description provided."}
               </p>
               <button
-                onClick={() => navigate("/admin/setpaper/")}
+                onClick={() => navigate(`/admin/setpaper/${exam.id}`)}
                 href="#"
                 className="btn btn-primary w-100"
               >
