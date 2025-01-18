@@ -24,6 +24,7 @@ import {
   getDoc,
   getDocs,
 } from "firebase/firestore";
+import Exams from "../admin/Exams";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQ4PlvwDNj18eZBdFduxe_ZvPGQyUus34",
@@ -45,6 +46,7 @@ export const FirebaseStore = ({ children }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [ex, setEx] = useState(1);
+  const [ex2, setEx2] = useState(1);
 
   const auth = getAuth();
 
@@ -95,6 +97,7 @@ export const FirebaseStore = ({ children }) => {
         answer: answer,
       });
       alert("Question is added");
+      setEx2(ex2 + 1);
     } catch (error) {
       alert("Can't able to add the question");
     }
@@ -114,6 +117,17 @@ export const FirebaseStore = ({ children }) => {
       return ques;
     } catch (error) {
       alert("Getting Server Error");
+    }
+  };
+
+  // Delete Question
+  const DeleteQuestion = async (id1, id2) => {
+    try {
+      await deleteDoc(doc(db, "Exams", id1, "Questions", id2));
+      setEx2(ex2 - 1);
+      alert("Question Deleted");
+    } catch (error) {
+      alert("Error", error);
     }
   };
 
@@ -176,9 +190,12 @@ export const FirebaseStore = ({ children }) => {
         db,
         ex,
         setEx,
+        ex2,
+        setEx2,
         DeleteExamList,
         AddQuestion,
         GetPaper,
+        DeleteQuestion,
       }}
     >
       {children}

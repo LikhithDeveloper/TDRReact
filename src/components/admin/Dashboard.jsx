@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { FirebaseLink } from "../store/firebase";
 import { useNavigate } from "react-router";
+import "./styles/Dashboard.css";
 
 const Dashboard = () => {
   const { user, loading } = useContext(FirebaseLink);
@@ -13,7 +14,11 @@ const Dashboard = () => {
     }
   }, [user, navigate, loading]);
 
-  return <h2>Hi Dashboard</h2>;
+  return (
+    <>
+      <div className="main"></div>
+    </>
+  );
 };
 
 export default Dashboard;

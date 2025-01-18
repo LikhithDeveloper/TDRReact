@@ -15,7 +15,10 @@ const AdminPanel = () => {
         <Route path="dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route path="exams" element={<Exams></Exams>}></Route>
         <Route path="students" element={<Students></Students>}></Route>
-        <Route path="setpaper/:id" element={<SetPaper></SetPaper>}></Route>
+        <Route
+          path="setpaper/:id/:exam"
+          element={<SetPaper></SetPaper>}
+        ></Route>
       </Routes>
     </div>
   );
